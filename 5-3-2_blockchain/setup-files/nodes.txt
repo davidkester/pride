@@ -1,0 +1,19 @@
+gd.wlkn.nl 86.93.162.125 0:24
+
+rtd.wlkn.nl (192.168.1.48) 178.84.70.143 8025-8049
+
+dt.wlkn.nl  136.144.208.161 50:74
+
+ut.wlkn.nl (192.168.1.48) 178.84.70.143 8075-8098
+
+rtd.wlkn.nl (192.168.1.48) 178.84.70.143 99
+
+
+
+
+wget https://nodejs.org/dist/v16.11.1/node-v16.11.1-linux-x64.tar.gz
+tar -xzf
+cd node-v6.11.1-linux-armv6l/
+sudo cp -R * /usr/local/
+
+

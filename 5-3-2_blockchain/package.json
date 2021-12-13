@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "@supercharge/promise-pool": "^1.8.0",
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "noble-secp256k1": "^1.2.10",
+    "parse": "^3.3.1",
+    "piscina": "^3.1.0",
+    "random-number-csprng": "^1.0.2",
+    "sha3": "^2.1.4",
+    "workerpool": "^6.1.5",
+    "ws": "^8.2.3"
+  }
+}

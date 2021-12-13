@@ -1,0 +1,32 @@
+openssl ecparam -genkey -name prime256v1 -out rcNL.key  
+openssl req -x509 -new -nodes -key rcNL.key -sha256 -days 1825 -out rcNL.pem
+sudo security add-trusted-cert -d -r trustRoot -k "/Library/Keychains/System.keychain" rcNL.pem
+
+
+openssl ecparam -genkey -name prime256v1 -out kmcA.key
+openssl req -new -key kmcA.key -out kmcA.csr
+
+
+authorityKeyIdentifier=keyid,issuer
+basicConstraints=CA:FALSE
+keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
+subjectAltName = @alt_names
+
+[alt_names]
+DNS.1 = a.wlkn.nl
+
+
+
+
+openssl req -x509 -CA rcNL.pem -CAkey rcNL.key -CAcreateserial -out a.wlkn.nl.crt -days 825 -sha256 config a.wlkn.nl.cnf -sha256
+
+
+
+
+WLKN = World LinK Network
+
+openssl req -config openssl.cnf -new -x509 -nodes -key rcNL.key -out rcNL.pem
+
+openssl req -new -key kmcA.key -out kmcA.csr
+
+openssl req -x509 -nodes -days 730 -newkey rsa:2048 -keyout cert.key -out cert.pem -config req.cnf -sha256

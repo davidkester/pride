@@ -1,0 +1,22 @@
+[req]
+default_md             = sha256
+encrypt_key            = no
+prompt                 = no
+distinguished_name     = subject
+x509_extensions        = x509_ext
+copy_extensions        = copy
+default_days           = 825
+
+[ subject ]
+C                      = NL
+ST                     = Zuid Holland
+L                      = Rotterdam
+OU                     = RC NL
+emailAddress           = david@wlkn.nl
+CN                     = RC NL Root CA
+
+[ x509_ext ]
+subjectKeyIdentifier   = hash
+authorityKeyIdentifier = keyid,issuer
+basicConstraints       = critical, CA:TRUE
+keyUsage               = critical, keyCertSign, cRLSign
